@@ -1,0 +1,55 @@
+@use "./variables" as var;
+@use 'sass:math';
+
+%section {
+  padding-top: (var.$gutter-base * 2);
+  padding-bottom: (var.$gutter-base * 2);
+
+  @media (max-width: 768px) {
+    padding-top: (var.$gutter-base);
+    padding-bottom: (var.$gutter-base);
+  }
+}
+
+
+%wrap {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+  @media (max-width: 999px) {
+    width: 100%;
+    padding-left: math.div(var.$gutter-base, 2);
+    padding-right: math.div(var.$gutter-base, 2);
+  }
+}
+
+@mixin wrap {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin btn {
+    text-decoration: none;
+    color: black;
+    border: 1px solid;
+    border-color: var.$text-color-secondary;
+    border-radius: var.$border-radius;
+    padding: 5px 15px;
+    display: block;
+    width: fit-content;
+    &:hover {
+        border-color: var.$background-color-primary;
+    }
+}
+@mixin link {
+  text-decoration: none;
+  color: var.$text-color-base;
+}
+
+@mixin padding-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}

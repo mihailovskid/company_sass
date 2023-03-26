@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.banner {
+    text-align: center;
+    padding: (var.$gutter-base *2);
+    h1 {
+        color: var.$text-color-primary;
+    }
+    p {
+        color: var.$text-color-primary;
+    }
+}
+input {
+    width: 400px;
+    padding:10px 5px;
+    border-bottom-left-radius: var.$border-radius;
+    border-top-left-radius: var.$border-radius;
+    border-style: none;
+    outline-style: none;
+
+}
+button {
+    padding: 10px 15px;
+    background-color: var.$background-color-secondary;
+    color: var.$background-color-base;
+    border-top-right-radius: var.$border-radius;
+    border-bottom-right-radius: var.$border-radius;
+    border-style: none;
+    cursor: pointer;
+    margin-left: -5px;
+}
+@media (max-width: 768px) {
+    .banner {
+        max-width: 90%;
+        margin: auto;
+       @include mix.padding-0;
+    }
+    form {
+        width: 100%;
+    }
+    input {
+        width: 87%;
+    }
+    button {
+        width: max-content;
+    }
+}
+@media (max-width: 425px) {
+
+    form {
+        width: 100%;
+    }
+    input {
+        width: 76%;
+    }
+    button {
+        width: max-content;
+    }
+}

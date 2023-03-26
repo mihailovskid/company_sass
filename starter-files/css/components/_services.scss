@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.services {
+    text-align: center;
+    padding: var.$gutter-base;
+    @include mix.wrap;
+
+    .header{
+        padding-bottom: 16px;
+    }
+}
+
+.links {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        width: 33.33%;
+        i {
+            color: var.$icon-color-primary;
+            font-size: 50px;
+            padding-bottom: 15px;
+        }
+        .wrap-item {
+            padding-bottom: 20px;
+        }
+        
+    }
+}
+@media (max-width: 768px) {
+    .services {
+        width: 90%;
+        @include mix.padding-0
+    }
+    .links .item {
+        width: 50%; 
+    }
+}
+@media (max-width: 425px) {
+    .links {
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+    }
+}

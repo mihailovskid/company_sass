@@ -1,0 +1,76 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.text-block {
+    @include mix.wrap;
+    display: flex;
+    padding: var.$gutter-base;
+    
+}
+.container {
+    width: 60%;
+    .first {
+        line-height: var.$line-height-medium;
+    }
+    .second {
+        line-height: var.$line-height-medium;
+        color: var.$text-color-secondary;
+    }
+
+    .btn {
+        @include mix.btn;
+    }
+}
+.icon {
+    width: 40%;
+    i {
+        font-size: 150px;
+        color: var.$icon-color-primary;
+        margin-top: 20px;
+        margin-left: 70px;
+        
+    }
+    
+}
+.text-block-reversed {
+    display: flex;
+   @include mix.wrap;
+    flex-direction: row-reverse;
+    padding: var.$gutter-base;
+}
+.bg-tertiary {
+    background-color: var.$background-color-tertiary;
+}
+
+@media (max-width: 768px) {
+    .text-block {
+        width:  90%;
+        @include mix.padding-0;
+        flex-direction: column;
+        .container {
+            width: 100%;
+            a {
+               display: none;
+            }
+        }
+    }
+    .icon {
+        margin-left: 50%;
+        i {
+            transform: translate(-100%);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .text-block-reversed {
+        width:  90%;
+        @include mix.padding-0;
+        flex-direction: column;
+        .container {
+            width: 100%;
+            a {
+               display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+footer {
+    padding: (var.$gutter-base *2);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    footer {
+        padding: var.$gutter-base;
+    }
+}
